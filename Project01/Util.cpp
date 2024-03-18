@@ -28,3 +28,4 @@ void random_init(int** matrix, int heigth, int length, int min, int max) {
 		}
 	}
 }
+

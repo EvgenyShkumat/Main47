@@ -54,3 +54,18 @@ string neighbour_matrix_elemetns(int** matrix, int heigth, int length) {
 
 	return msg;
 }
+
+void chessboard(char** matrix, int heigth, int length) {
+	for (int i = 0; i < heigth; i++)
+	{
+		for (int j = 0; j < length; j++)
+		{
+			if ((i + j) % 2 == 0) {
+				matrix[i][j] = ' ';
+			}
+			else {
+				matrix[i][j] = 'X';
+			}
+		}
+	}
+}

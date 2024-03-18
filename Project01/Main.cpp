@@ -6,23 +6,32 @@ void random_init(int** matrix, int heigth, int length, int min, int max);
 
 int find_column_max_sum_index(int** matrix, int heigth, int length);
 string neighbour_matrix_elemetns(int** matrix, int heigth, int length);
+void chessboard(char** matrix, int heigth, int length);
 
 int main() {
 	srand(time(NULL));
 
-	int heigth = 3;
-	int length = 3;
+	int heigth = 8;
+	int length = 8;
 
-	int** matrix = new int* [heigth];
+	char** matrix = new char* [heigth];
 
 	for (int i = 0; i < heigth; i++)
 	{
-		*(matrix + i) = new int[length];
+		*(matrix + i) = new char[length];
 	}
 
-	random_init(matrix, heigth, length, 0, 5);
-	cout << convert_to_string(matrix, length, heigth);
-	cout << neighbour_matrix_elemetns(matrix, heigth, length);
+	chessboard(matrix, heigth, length);
+
+	for (int i = 0; i < heigth; i++)
+	{
+		for (int j = 0; j < length; j++)
+		{
+			cout << *(*(matrix + i) + j);
+		}
+		cout << endl;
+	}
+	
 
 	for (int i = 0; i < heigth; i++)
 	{
